@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Economica:wght@700&family=Raleway:wght@300;500;800&family=Space+Grotesk:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 :root {
     --bg-clr: #F4F4F9;
     --red-clr: #9B1D20;
     --sc-clr: #bedcdb;
+    --EASE_INOUT_QUAD: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --EASE_IN_QUAD: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    --EASE_OUT_QUAD: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --COLOR_UI_PHARMACY: #237db5;
+    --loaderPill_DURATION: 1800ms;
 }
 
 body {
@@ -28,11 +35,149 @@ img {
 
 }
 
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loaderPill {
+    text-align: center;
+}
+
+.loaderPill-anim {
+    height: 160px;
+}
+
+.loaderPill-anim-bounce {
+    animation: loaderPillBounce var(--loaderPill_DURATION) linear infinite;
+}
+
+.loaderPill-anim-flop {
+    transform-origin: 50% 50%;
+    animation: loaderPillFlop var(--loaderPill_DURATION) linear infinite;
+}
+
+.loaderPill-pill {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--COLOR_UI_PHARMACY);
+    background-image: linear-gradient(to right, var(--COLOR_UI_PHARMACY) 50%, #ffffff 50%);
+}
+
+.loaderPill-floor {
+    display: block;
+    text-align: center;
+}
+
+.loaderPill-floor-shadow {
+    display: inline-block;
+    width: 70px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: color(var(--COLOR_UI_PHARMACY) alpha(26%));
+    transform: translateY(-15px);
+    animation: loaderPillScale var(--loaderPill_DURATION) linear infinite;
+}
+
+.loaderPill-text {
+    font-weight: bold;
+    color: var(--COLOR_UI_PHARMACY);
+    text-transform: uppercase;
+}
+
+@keyframes loaderPillBounce {
+    0% {
+        transform: translateY(123px);
+        animation-timing-function: var(--EASE_OUT_QUAD);
+    }
+
+    25% {
+        transform: translateY(40px);
+        animation-timing-function: var(--EASE_IN_QUAD);
+    }
+
+    50% {
+        transform: translateY(120px);
+        animation-timing-function: var(--EASE_OUT_QUAD);
+    }
+
+    75% {
+        transform: translateY(20px);
+        animation-timing-function: var(--EASE_IN_QUAD);
+    }
+
+    100% {
+        transform: translateY(120px);
+    }
+}
+
+@keyframes loaderPillFlop {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(450deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes loaderPillScale {
+    0% {
+        transform: translateY(-15px) scale(1, 1);
+        animation-timing-function: var(--EASE_OUT_QUAD);
+    }
+
+    25% {
+        transform: translateY(-15px) scale(0.7, 1);
+        animation-timing-function: var(--EASE_IN_QUAD);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1, 1);
+        animation-timing-function: var(--EASE_OUT_QUAD);
+    }
+
+    75% {
+        transform: translateY(-15px) scale(0.6, 1);
+        animation-timing-function: var(--EASE_IN_QUAD);
+    }
+
+    100% {
+        transform: translateY(-15px) scale(1, 1);
+    }
+}
+
 .bg-image {
     background-image: url(../images/thomas-langnes-M6JMfzye72E-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
     min-width: min(30rem, 50%);
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     position: relative;
@@ -40,11 +185,10 @@ img {
 }
 
 svg {
-    padding: 2rem;
+    min-width: 100%;
+    padding: 3rem;
     background-color: rgba(255, 255, 255, 0.6);
     flex: 0.2;
-    position: absolute;
-    top: 9rem;
 }
 
 a {
@@ -424,6 +568,11 @@ label {
     }
 }
 
+
+.options {
+    border: red 2px solid;
+}
+
 @media screen and (max-width: 1040px) {
     .bg-image {
         height: 9rem;
@@ -440,9 +589,8 @@ label {
         position: sticky;
         z-index: -3;
         background-color: rgba(255, 255, 255, 0.3);
-        padding: 0 4rem;
+        padding: 1rem 4rem;
         min-height: 100%;
-
     }
 
     .btn {
@@ -481,6 +629,7 @@ label {
         -ms-transform: translateY(14rem);
         -o-transform: translateY(14rem);
         max-width: 13rem;
+
     }
 
     svg {
