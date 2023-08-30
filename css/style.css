@@ -13,16 +13,6 @@
     --loaderPill_DURATION: 1800ms;
 }
 
-body {
-    font-family: 'Economica',
-        sans-serif;
-    font-family: 'Raleway',
-        sans-serif;
-    font-family: 'Space Grotesk',
-        sans-serif;
-
-}
-
 label,
 img {
     user-select: none;
