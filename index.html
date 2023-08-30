@@ -230,23 +230,56 @@
 						<input class="r" type="number" name="userAge" id="age" required />
 					</div>
 					<div class="options r">
-						<label for="hypertension "
+						<label for="hypertension"
 							><span class="required">*</span>Hypertension</label
 						>
-						<input type="checkbox" name="hypertension" id="hypertension" />
+
+						<!-- ==================================== -->
+						<div class="toggle-button-cover">
+							<div id="button-3" class="button r">
+								<input
+									class="checkbox"
+									name="hypertension"
+									id="Hypertension"
+									type="checkbox" />
+								<div class="knobs"></div>
+								<div class="layer"></div>
+							</div>
+						</div>
+						<!-- ===================================== -->
 					</div>
+
 					<div class="options">
 						<label for="heart"
 							><span class="required">*</span>Heart Disease</label
 						>
-						<input type="checkbox" name="heartDisease" id="heartDisease" />
+						<div class="toggle-button-cover">
+							<div id="button-3" class="button r" name="heart" id="heart">
+								<input
+									class="checkbox"
+									name="heart"
+									id="heart"
+									type="checkbox" />
+								<div class="knobs"></div>
+								<div class="layer"></div>
+							</div>
+						</div>
 					</div>
 					<div class="options r">
 						<label for="marry "
 							><span class="required">*</span>Ever Married</label
 						>
-
-						<input type="checkbox" id="marry" name="marry" class="options" />
+						<div class="toggle-button-cover">
+							<div id="button-3" class="button r" name="heart" id="heart">
+								<input
+									class="checkbox"
+									name="marry"
+									id="marry"
+									type="checkbox" />
+								<div class="knobs"></div>
+								<div class="layer"></div>
+							</div>
+						</div>
 					</div>
 					<div id="working-div " class="options">
 						<label for="work"><span class="required">*</span>Work Type</label
@@ -273,26 +306,18 @@
 					</div>
 					<div class="bmi options">
 						<label for="bmi">BMI:</label>
+
 						<input type="number" step="0.1" name="bmi" id="bmi" />
 					</div>
-					<div class="btn">
+					<div class="btn" style="display: block; min-width: 200px">
 						<button
 							onclick="toastFunction()"
 							type="submit"
 							value="Submit"
 							class="login"
 							id="submit">
-							Create Account
+							Predict
 						</button>
-						<div id="toast">
-							<div class="checkicon"><i class="fas fa-check-square"></i></div>
-							We have received your registration!
-							<span class="jk">jk this is a demo.</span>
-						</div>
-						<div class="loging">
-							<p style="display: inline">Already have an account?</p>
-							<a href="#" id="login">Login</a>
-						</div>
 					</div>
 				</form>
 			</div>
