@@ -16,9 +16,9 @@ app = Flask(__name__)
 # Load the pre-trained model
 model = joblib.load("C:\\Users\\wahda\\OneDrive\\Desktop\\stroke\\stroke-risk-predictor\\flask app\\logistic_model.pkl")
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def index():
-    return render_template('form.html')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -37,9 +37,9 @@ def predict():
         glucose = data['glucose']
         bmi = data['bmi']
         marry = data['marry']
-        # Extract the other features similarly
         
-        # Ensure the features are in the correct data type and format
+        
+        
         age = float(age)
         hyper_tension = int(hyper_tension)
         heart_disease = int(heart_disease)
@@ -48,15 +48,15 @@ def predict():
         bmi = float(bmi)
         smoking = int(smoking)
         glucose = float(glucose)
-        # Convert and validate the other features
         
-        # Prepare the data for prediction as a 2D array
-        input_data = [[age, hyper_tension, heart_disease,marry,work_type,glucose,bmi,smoking]]  # Include all eight features
         
-        # Make predictions using the model
+        
+        input_data = [[age, hyper_tension, heart_disease,marry,work_type,glucose,bmi,smoking]]  
+        
+        
         prediction = model.predict(input_data)
         
-        # Return the prediction as JSON response
+        
         return jsonify({'prediction': prediction[0]})
     
     except Exception as e:

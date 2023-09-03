@@ -24,7 +24,7 @@ function getInputValues() {
         age: age,
         hyper_tension: hyper_tension,
         heart_disease: heart_disease,
-        work_type: work_type,
+        work_type_value: work_type,
         marry: marry,
         smoking: smoking,
         bmi: bmi,
@@ -48,9 +48,9 @@ function getInputValues() {
     
       // Set the text based on the prediction
     if (prediction === 1) {
-        resultElement.textContent = "He is really dead";
+        document.getElementById("result").innerText="he is really dead";
     } else {
-        resultElement.textContent = "Luckily he survived";
+        document.getElementById("result").innerText="luckily he survived";
     }
     })
     .catch(error => {
