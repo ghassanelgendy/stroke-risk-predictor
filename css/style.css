@@ -281,7 +281,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    min-width: min(30rem, 50%);
+    min-width: min(20rem, 50%);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -318,7 +318,6 @@ a {
 form {
     padding: 0rem 2rem;
     display: flex;
-    max-width: 40rem;
     gap: 1rem;
     flex-wrap: wrap;
     position: relative;
@@ -411,6 +410,66 @@ button {
 }
 
 
+.wrapper {
+    --font-color-dark: #fefefe;
+    --font-color-light: #111;
+    --bg-color: var(--COLOR_UI_PHARMACY);
+    --main-color: #fefefe;
+    position: relative;
+    width: 250px;
+    height: 36px;
+    background-color: red;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 4px 4px var(--main-color);
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.option {
+    width: 80.5px;
+    height: 28px;
+    position: relative;
+    border: none;
+    top: 2px;
+    left: 2px;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    appearance: none;
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.span {
+    color: var(--font-color-dark);
+}
+
+.input:checked+.btn {
+    background-color: var(--main-color);
+}
+
+.input:checked+.btn .span {
+    color: var(--font-color-light);
+}
 
 button:hover {
     cursor: pointer;
@@ -465,115 +524,11 @@ a:hover {
     color: #1b4543;
 }
 
-.btn {
-    margin: 0 0;
-    gap: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    transition: all ease-in-out 200ms;
-    -webkit-transition: all ease-in-out 200ms;
-    -moz-transition: all ease-in-out 200ms;
-    -ms-transition: all ease-in-out 200ms;
-    -o-transition: all ease-in-out 200ms;
-}
+
 
 label {
     display: block;
 }
-
-.card {
-    box-sizing: border-box;
-    width: 190px;
-    height: 254px;
-    background: rgba(217, 217, 217, 0.58);
-    border: 1px solid white;
-    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-    backdrop-filter: blur(6px);
-    border-radius: 17px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    font-weight: bolder;
-    color: black;
-}
-
-.card:hover {
-    border: 1px solid black;
-    transform: scale(1.05);
-}
-
-.card:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-}
-
-
-.alerts {
-    transition: all ease-out 200ms;
-    font-size: smaller;
-    padding: 0.4rem;
-    border: var(--red-clr) solid 1.5px;
-    border-bottom: var(--red-clr) solid 3px;
-    border-radius: 0.8rem;
-    -webkit-border-radius: 0.8rem;
-    -moz-border-radius: 0.8rem;
-    -ms-border-radius: 0.8rem;
-    -o-border-radius: 0.8rem;
-    transition: all ease-in-out 200ms;
-    -webkit-transition: all ease-out 200ms;
-    -moz-transition: all ease-out 200ms;
-    -ms-transition: all ease-out 200ms;
-    -o-transition: all ease-out 200ms;
-    position: absolute;
-    z-index: -2;
-    opacity: 0;
-}
-
-.shown {
-    transform: translateY(12.7rem);
-    -webkit-transform: translateY(12.7rem);
-    -moz-transform: translateY(12.7rem);
-    -ms-transform: translateY(12.7rem);
-    -o-transform: translateY(12.7rem);
-    opacity: 1;
-    background-color: white;
-    z-index: 222;
-    color: var(--red-clr);
-}
-
-.correct {
-    color: #1b4543;
-    border-color: #1b4543
-}
-
-#toast {
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -150 px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: black;
-    text-align: center;
-    border-radius: 10px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 30px;
-    font-size: 16px;
-}
-
-#toast.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
 
 .jk {
     display: block;
@@ -704,7 +659,14 @@ label {
 
 
 .options {
+    background-color: white;
+    padding: 1em;
+    border-radius: 1em;
     border: red 2px solid;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
 }
 
 @media screen and (max-width: 1040px) {
