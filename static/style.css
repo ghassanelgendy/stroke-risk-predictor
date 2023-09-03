@@ -1,0 +1,110 @@
+/* style.css */
+
+/* Style for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Style for the container */
+.container {
+    display: flex;
+    max-width: 600px; /* Reduced container width */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the form container */
+.form-container {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Style for the prediction container */
+.prediction-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #007bff; /* Blue background for prediction */
+    color: #fff;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Style for "Enter User Information" text */
+h1 {
+    font-size: 24px; /* Larger font size */
+    margin-bottom: 15px; /* Increased margin */
+    color: #333; /* Text color */
+}
+
+/* Style for form labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333; /* Text color for labels */
+}
+
+/* Style for text input fields */
+input[type="text"] {
+    width: 100%;
+    padding: 8px; /* Smaller padding */
+    margin-bottom: 10px; /* Reduced margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; /* Smaller font size */
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Style for the Predict button */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 18px; /* Smaller padding */
+    font-size: 16px; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Style for the Predict button on hover */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the prediction result container */
+#prediction-result {
+    margin-top: 15px; /* Reduced margin-top */
+    padding: 10px; /* Smaller padding */
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+    animation: fadeIn 1s;
+}
+
+/* Style for the prediction result text */
+#result-text {
+    font-size: 18px; /* Smaller font size */
+    font-weight: bold;
+    margin: 0;
+    color: #333; /* Text color for result */
+}
+
+/* Animation for fading in the result container */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
