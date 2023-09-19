@@ -5,15 +5,19 @@ import joblib
 app = Flask(__name__,static_url_path='/static')
 #
 # Load the pre-trained model
-model = joblib.load("C:\\Users\\wahda\\OneDrive\\Desktop\\stroke\\stroke-risk-predictor\\flask app\\logistic_model.pkl")
+model = joblib.load("C:\\Users\\wahda\\OneDrive\\Desktop\\stroke\\stroke-risk-predictor\\model\\logistic_model.pkl")
 
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
+#def response():
+# print(f"Received JSON data: {request.form.to_dict()}")
+
 def predict():
     try:
+        
         # Retrieve user input data from the form and convert to integers
         smoking = int(request.form['smoking'])
         age = float(request.form['age'])
@@ -44,3 +48,5 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
