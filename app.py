@@ -5,7 +5,7 @@ import joblib
 app = Flask(__name__,static_url_path='/static')
 #
 # Load the pre-trained model
-model = joblib.load("C:\\Users\\wahda\\OneDrive\\Desktop\\stroke\\stroke-risk-predictor\\model\\logistic_model.pkl")
+model = joblib.load("C:\\Users\\wahda\\OneDrive\\Desktop\\stroke\\stroke-risk-predictor\\app\\model\\logistic_model.pkl")
 
 @app.route('/', methods=['GET'])
 def index():
