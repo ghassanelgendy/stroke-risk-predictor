@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ML Model Deployment</title>
+		<link rel="stylesheet" href="./static/css/style.css" />
+	</head>
+	<body>
+		<h1>Enter User Information</h1>
+		<form id="prediction-form" method="post">
+			<label for="smoking">1. Smoking:</label>
+			<input type="text" name="smoking" id="smoking" required /><br />
+
+			<label for="age">2. Age:</label>
+			<input type="number" name="age" id="age" required /><br />
+
+			<label for="bmi">3. BMI:</label>
+			<input type="number" name="bmi" id="bmi" required /><br />
+
+			<label for="glucose">4. Average Glucose Level:</label>
+			<input type="number" name="glucose" id="glucose" required /><br />
+
+			<label for="marry">5. Married:</label>
+			<input type="number" name="marry" id="marry" required /><br />
+
+			<label for="hyper_tention">6. Hyper Tension:</label>
+			<input
+				type="number"
+				name="hyper_tention"
+				id="hyper_tention"
+				required /><br />
+
+			<label for="heart_disease">7. Heart Disease:</label>
+			<input
+				type="number"
+				name="heart_disease"
+				id="heart_disease"
+				required /><br />
+
+			<label for="work_state">8. Work State:</label>
+			<input type="number" name="work_state" id="work_state" required /><br />
+
+			<input type="submit" value="Predict" />
+		</form>
+
+		<div id="prediction-result" style="display: none">
+			<h2>Prediction Result</h2>
+			<p id="result-text"></p>
+		</div>
+
+		<script src="./static/js/script.js"></script>
+	</body>
+</html>
